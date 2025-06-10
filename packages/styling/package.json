@@ -1,0 +1,22 @@
+{  
+  "name": "@cozy/styling",
+  "version": "0.0.0",
+  "license": "MIT",
+  "sideEffects": [
+    "**/*.css"
+  ],
+  "files": [
+    "dist"
+  ],
+  "exports": {
+    "./theme.css": "./src/theme.css",
+    "./styles.css": "./dist/styles.css",
+    "./tailwind.config.ts": "./tailwind.config.ts"
+  },
+  "scripts": {
+    "build": "tailwindcss -i ./src/styles.css -o ./dist/styles.css",
+    "lint": "eslint src/",
+    "dev": "tailwindcss -i ./src/styles.css -o ./dist/styles.css --watch",
+    "type-check": "tsc --noEmit"
+  }
+}
