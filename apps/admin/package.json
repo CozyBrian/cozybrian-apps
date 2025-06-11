@@ -5,15 +5,16 @@
   "type": "module",
   "scripts": {
     "dev": "vite --port 3002 --host",
-    "build": "vite build",
+    "build": "tsc -b && vite build",
     "lint": "eslint .",
     "start": "vite preview"
   },
   "dependencies": {
+    "@radix-ui/react-dialog": "^1.1.14",
     "@tailwindcss/vite": "^4.1.8",
     "@tanstack/react-router": "^1.121.0",
     "@tanstack/react-router-devtools": "^1.121.0",
-    "react": "^19.1.0",
+    "react": "19.1.0",
     "react-dom": "^19.1.0"
   },
   "devDependencies": {
@@ -22,8 +23,8 @@
     "@cozy/utils": "workspace:*",
     "@eslint/js": "^9.28.0",
     "@tanstack/router-plugin": "^1.121.0",
-    "@types/react": "^19.1.2",
-    "@types/react-dom": "^19.1.2",
+    "@types/react": "19.1.0",
+    "@types/react-dom": "19.1.0",
     "@vitejs/plugin-react": "^4.4.1",
     "eslint": "^9.28.0",
     "eslint-plugin-react-hooks": "^5.2.0",

@@ -11,7 +11,7 @@ function RouteComponent() {
       <div className="flex flex-1 flex-col justify-center px-4 py-10 lg:px-6">
         <div className="sm:mx-auto sm:w-full sm:max-w-sm">
           <h2 className="text-center text-xl font-semibold text-foreground">
-            Log in
+            Log in (hello)
           </h2>
           <form action="#" method="post" className="mt-6">
             <Label htmlFor="email" className="font-medium text-foreground">

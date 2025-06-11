@@ -11,7 +11,7 @@
   },
   "aliases": {
     "components": "@cozy/ui/components",
-    "utils": "@cozy/ui/lib/utils",
+    "utils": "@cozy/utils",
     "ui": "@cozy/ui/components/ui",
     "lib": "@cozy/ui/lib",
     "hooks": "@cozy/ui/hooks"

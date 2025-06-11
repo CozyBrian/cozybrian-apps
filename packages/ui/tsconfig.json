@@ -4,7 +4,10 @@
     "outDir": "dist",
     "baseUrl": ".",
     "paths": {
-      "@cozy/ui/*": ["./src/*"]
+      "@cozy/ui/*": ["./src/*"],
+      "@cozy/ui/lib/*": ["./src/lib/*"],     // 👈 explicit sub-paths
+      "@cozy/ui/utils/*": ["./src/utils/*"],
+      "@cozy/ui/hooks/*": ["./src/hooks/*"]
     }
   },
   "include": ["src"],
