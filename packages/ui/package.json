@@ -3,7 +3,11 @@
   "version": "0.0.0",
   "private": true,
   "exports": {
-    "./styles.css": "./dist/styles.css"
+    "./styles.css": "./dist/styles.css",
+    "./lib/*": "./src/lib/*",
+    "./utils/*": "./src/utils/*",
+    "./hooks/*": "./src/hooks/*",
+    ".": "./src/index.ts"
   },
   "scripts": {
     "build": "tailwindcss -i ./src/styles.css -o ./dist/styles.css",
@@ -22,6 +26,9 @@
     "typescript": "~5.8.3"
   },
   "dependencies": {
+    "@radix-ui/react-label": "^2.1.7",
+    "@radix-ui/react-separator": "^1.1.7",
+    "@radix-ui/react-slot": "^1.2.3",
     "react": "^19.1.0",
     "react-dom": "^19.1.0"
   }
