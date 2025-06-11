@@ -11,13 +11,17 @@
   },
   "dependencies": {
     "@tailwindcss/vite": "^4.1.8",
+    "@tanstack/react-router": "^1.121.0",
+    "@tanstack/react-router-devtools": "^1.121.0",
     "react": "^19.1.0",
     "react-dom": "^19.1.0"
   },
   "devDependencies": {
     "@cozy/styling": "workspace:*",
     "@cozy/ui": "workspace:*",
+    "@cozy/utils": "workspace:*",
     "@eslint/js": "^9.28.0",
+    "@tanstack/router-plugin": "^1.121.0",
     "@types/react": "^19.1.2",
     "@types/react-dom": "^19.1.2",
     "@vitejs/plugin-react": "^4.4.1",
