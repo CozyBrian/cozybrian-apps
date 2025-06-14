@@ -1,6 +1,7 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   transpilePackages: [
+    '@cozy/db',
     '@cozy/ui',
     '@cozy/styling',
   ]
