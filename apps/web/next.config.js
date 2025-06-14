@@ -4,7 +4,7 @@ const nextConfig = {
     '@cozy/db',
     '@cozy/ui',
     '@cozy/styling',
-  ]
+  ],
 };
 
 export default nextConfig;

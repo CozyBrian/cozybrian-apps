@@ -34,12 +34,10 @@ const AuthLoginRoute = AuthLoginRouteImport.update({
 } as any)
 
 export interface FileRoutesByFullPath {
-  '': typeof MainRouteWithChildren
   '/login': typeof AuthLoginRoute
   '/': typeof MainIndexRoute
 }
 export interface FileRoutesByTo {
-  '': typeof AuthRouteWithChildren
   '/login': typeof AuthLoginRoute
   '/': typeof MainIndexRoute
 }
@@ -52,9 +50,9 @@ export interface FileRoutesById {
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '' | '/login' | '/'
+  fullPaths: '/login' | '/'
   fileRoutesByTo: FileRoutesByTo
-  to: '' | '/login' | '/'
+  to: '/login' | '/'
   id: '__root__' | '/_auth' | '/_main' | '/_auth/login' | '/_main/'
   fileRoutesById: FileRoutesById
 }

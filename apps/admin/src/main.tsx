@@ -3,35 +3,39 @@ import { StrictMode } from 'react'
 import ReactDOM from 'react-dom/client'
 import { RouterProvider, createRouter } from '@tanstack/react-router'
 
+import { QueryClient, QueryClientProvider } from '@tanstack/react-query'
+import { AuthQueryProvider } from '@daveyplate/better-auth-tanstack';
 // Import the generated route tree
 import { routeTree } from './routeTree.gen'
-import AuthProvider, { useAuth, type IAuthContext } from './providers/auth'
-import { QueryClient, QueryClientProvider } from '@tanstack/react-query'
+import { authClient } from './lib/auth'
+
+type SessionData = ReturnType<typeof authClient["useSession"]>
 
 // Create a new router instance
 const router = createRouter({ 
   routeTree,
   context: {
-    auth: null as unknown as IAuthContext,
+    session: null as unknown as SessionData,
   }
 })
 
 const queryClient = new QueryClient();
 
 function InnerApp() {
-  const auth = useAuth();
+  const session = authClient.useSession();
+
   return (
     <QueryClientProvider client={queryClient}>
-      <RouterProvider router={router} context={{ auth }} />
+      <RouterProvider router={router} context={{ session }} />
     </QueryClientProvider>
   );
 }
 
 function App() {
   return (
-    <AuthProvider>
+    <AuthQueryProvider>
       <InnerApp />
-    </AuthProvider>
+    </AuthQueryProvider>
   );
 }
 
