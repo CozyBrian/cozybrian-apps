@@ -1,3 +1,4 @@
+import PageLoader from '@/components/layout/PageLoader';
 import { authClient } from '@/lib/auth';
 import { createFileRoute, Outlet, redirect } from '@tanstack/react-router'
 
@@ -13,13 +14,14 @@ export const Route = createFileRoute("/_main")({
       });
     }
   },
+  pendingComponent: PageLoader,
   component: MainLayout,
 });
 
 function MainLayout() {
   return (
-    <main className="flex flex-row w-screen h-screen overflow-clip scrollbar-none">
+    <div className="flex flex-row w-screen h-screen overflow-clip scrollbar-none">
       <Outlet />
-    </main>
+    </div>
   );
 }

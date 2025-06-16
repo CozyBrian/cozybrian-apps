@@ -149,6 +149,17 @@
   --shadow-xl: var(--shadow-xl);
   --shadow-2xl: var(--shadow-2xl);
 }
+
+@layer base {
+  main {
+    @apply bg-background text-foreground;
+  }
+
+  button {
+    cursor: pointer;
+  }
+}
+
 @theme {
   --font-sans: Geist, sans-serif;
   --font-comfortaa: Comfortaa, sans-serif;
