@@ -32,6 +32,7 @@
     "packages/*"
   ],
   "dependencies": {
+    "@prisma/nextjs-monorepo-workaround-plugin": "^6.9.0",
     "@tailwindcss/cli": "^4.1.8",
     "@tailwindcss/postcss": "^4.1.8",
     "@tanstack/react-query": "^5.80.7",
