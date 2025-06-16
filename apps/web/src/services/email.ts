@@ -33,7 +33,7 @@ export class EmailService {
     await this.sendEmail({
       to: email,
       from: emailConfig.authEmail,
-      subject: "Your OTP Code - CozyBrian",
+      subject: `Your OTP Code ${otp} - CozyBrian`,
       template: emailConfig.templates.sendOTPCode,
       data: { otp_code: otp },
     });

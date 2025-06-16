@@ -6,15 +6,15 @@ import { EmailService } from "../services/email";
  
 export const auth = betterAuth({
   database: prismaAdapter(prisma, {
-    provider: "postgresql", // or "mysql", "postgresql", ...etc
+    provider: "postgresql",
   }),
   plugins: [
     emailOTP({ 
       async sendVerificationOTP({ email, otp, type }) {
         return EmailService.sendOTPCode(email, otp);
-				// Implement the sendVerificationOTP method to send the OTP to the user's email address
 			},
-
+      disableSignUp: true,
+      
     }) 
   ]
 })
