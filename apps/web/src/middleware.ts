@@ -2,7 +2,7 @@ import { NextResponse, type NextRequest } from "next/server";
 
 const corsOptions = {
   allowedMethods: ["GET", "HEAD", "PUT", "PATCH", "POST", "DELETE", "OPTIONS"],
-  allowedOrigins: ["http://localhost:3002"],
+  allowedOrigins: ["http://localhost:3002", "https://admin.cozybrian.dev", "https://dev.admin.cozybrian.dev"],
   allowedHeaders: ["Content-Type", "Authorization"],
   exposedHeaders: [],
   maxAge: 86400,
