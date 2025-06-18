@@ -1,6 +1,4 @@
-export function SendOTP({ otp_code }: {
-  otp_code: string
-}): string {
+export function SendOTP({ otp_code }: { otp_code: string }): string {
   return `
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html dir="ltr" lang="en">
@@ -86,5 +84,5 @@ export function SendOTP({ otp_code }: {
     <!--/$-->
   </body>
 </html>
-  `
+  `;
 }

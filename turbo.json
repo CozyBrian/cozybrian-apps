@@ -6,7 +6,15 @@
       "dependsOn": ["^build", "^db:deploy"],
       "inputs": ["$TURBO_DEFAULT$", ".env*"],
       "outputs": [".next/**", "!.next/cache/**", "dist/**"],
-      "env": ["DATABASE_URL", "DIRECT_URL", "RESEND_API_KEY", "BETTER_AUTH_SECRET", "BETTER_AUTH_URL", "VITE_BETTER_AUTH_URL"]
+      "env": [
+        "DATABASE_URL", 
+        "DIRECT_URL", 
+        "RESEND_API_KEY", 
+        "BETTER_AUTH_SECRET", 
+        "BETTER_AUTH_URL", 
+        "VITE_BETTER_AUTH_URL",
+        "NODE_ENV"
+      ]
     },
     "lint": {
       "dependsOn": ["^lint"]
@@ -29,6 +37,9 @@
     "db:deploy": {
       "cache": false,
       "env": ["DATABASE_URL", "DIRECT_URL"]
+    },
+    "lint:fix": {
+      "outputs": []
     }
   }
 }

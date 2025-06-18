@@ -1,6 +1,6 @@
 // test prisma with get and post Posts
-import { NextResponse } from "next/server";
 import { prisma } from "@cozy/db"; // Adjust the import path as necessary
+import { NextResponse } from "next/server";
 
 export async function GET() {
   const posts = await prisma.post.findMany();

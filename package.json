@@ -5,6 +5,7 @@
     "build": "turbo run build",
     "dev": "turbo run dev",
     "lint": "turbo run lint",
+    "lint:fix": "turbo run lint:fix",
     "start-web": "turbo run web#start @cozy/ui#dev @cozy/styling#dev",
     "dev-web": "turbo run web#dev @cozy/ui#dev @cozy/styling#dev",
     "build-web": "turbo run web#build",
@@ -19,6 +20,13 @@
     "check-types": "turbo run check-types"
   },
   "devDependencies": {
+    "@typescript-eslint/eslint-plugin": "^8.34.1",
+    "@typescript-eslint/parser": "^8.34.1",
+    "eslint-import-resolver-typescript": "^4.4.3",
+    "eslint-plugin-import": "^2.31.0",
+    "eslint-plugin-prettier": "^5.5.0",
+    "eslint-plugin-react": "^7.37.5",
+    "eslint-plugin-unused-imports": "^4.1.4",
     "prettier": "^3.5.3",
     "syncpack": "^14.0.0-alpha.13",
     "turbo": "^2.5.4",

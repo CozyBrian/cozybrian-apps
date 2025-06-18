@@ -1,18 +1,17 @@
-import { createFileRoute } from '@tanstack/react-router'
-import { Button, Input, Label, toast } from '@cozy/ui'
-import { Formik, Form, Field } from 'formik'
-import * as Yup from 'yup'
-import { authClient } from '@/lib/auth'
+import { Button, Input, Label, toast } from "@cozy/ui";
+import { createFileRoute } from "@tanstack/react-router";
+import { Formik, Form, Field } from "formik";
+import * as Yup from "yup";
+
+import { authClient } from "@/lib/auth";
 
 const loginSchema = Yup.object().shape({
-  email: Yup.string()
-    .email('Invalid email address')
-    .required('Email is required'),
-})
+  email: Yup.string().email("Invalid email address").required("Email is required"),
+});
 
-export const Route = createFileRoute('/_auth/login')({
+export const Route = createFileRoute("/_auth/login")({
   component: RouteComponent,
-})
+});
 
 function RouteComponent() {
   const navigate = Route.useNavigate();
@@ -21,19 +20,17 @@ function RouteComponent() {
     <div className="flex items-center justify-center min-h-screen">
       <div className="flex flex-1 flex-col justify-center px-4 py-10 lg:px-6">
         <div className="sm:mx-auto sm:w-full sm:max-w-sm">
-          <h2 className="text-xl font-semibold text-card-foreground">
-            Log in
-          </h2>
+          <h2 className="text-xl font-semibold text-card-foreground">Log in</h2>
           <Formik
             validateOnMount
-            initialValues={{ email: '' }}
+            initialValues={{ email: "" }}
             validationSchema={loginSchema}
             onSubmit={async (params, { setSubmitting }) => {
-              setSubmitting(true)
+              setSubmitting(true);
 
               const { data, error } = await authClient.emailOtp.sendVerificationOtp({
                 email: params.email,
-                type: 'sign-in',
+                type: "sign-in",
               });
 
               if (error) {
@@ -43,8 +40,8 @@ function RouteComponent() {
               }
 
               if (data) {
-                toast.success('Verification email sent! Please check your inbox.');
-                navigate({ to: '/otp-input', search: { email: params.email } });
+                toast.success("Verification email sent! Please check your inbox.");
+                navigate({ to: "/otp-input", search: { email: params.email } });
               }
               setSubmitting(false);
             }}
@@ -66,10 +63,10 @@ function RouteComponent() {
                 {errors.email && touched.email && (
                   <div className="text-red-800 text-xs mt-1">{errors.email}</div>
                 )}
-                <Button 
+                <Button
                   type="submit"
                   disabled={!isValid}
-                  isLoading={isSubmitting} 
+                  isLoading={isSubmitting}
                   className="mt-4 w-full"
                 >
                   Continue
@@ -80,6 +77,5 @@ function RouteComponent() {
         </div>
       </div>
     </div>
-  )
+  );
 }
-

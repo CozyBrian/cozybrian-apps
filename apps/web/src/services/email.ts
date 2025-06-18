@@ -1,16 +1,18 @@
 import { emailConfig } from "../config/email.config";
 import resend from "../lib/resend";
 
-export interface EmailData {
+export interface EmailData<P extends Record<string, unknown>> {
   to: string;
   from?: string;
   subject: string;
-  template: (props: any) => string;
-  data: Record<string, any>;
+  template: (props: P & { authEmail: string }) => string;
+  data: P;
 }
 
 export class EmailService {
-  private static async sendEmail(emailData: EmailData) {
+  private static async sendEmail<P extends Record<string, unknown>>(
+    emailData: EmailData<P>,
+  ) {
     try {
       const Template = emailData.template;
       const templateProps = {
@@ -25,7 +27,7 @@ export class EmailService {
         html: Template(templateProps),
       });
     } catch (error) {
-      console.error('Failed to send email:', error);
+      console.error("Failed to send email:", error);
     }
   }
 

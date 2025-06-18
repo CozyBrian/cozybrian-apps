@@ -8,6 +8,7 @@
     "build": "next build",
     "start": "next start",
     "lint": "next lint --max-warnings 0",
+    "lint:fix": "eslint --cache --fix --ext .js,.jsx,.ts,.tsx src",
     "check-types": "tsc --noEmit"
   },
   "dependencies": {

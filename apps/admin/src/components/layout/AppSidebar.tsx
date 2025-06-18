@@ -1,20 +1,15 @@
-import { 
-  DropdownMenu,
-  DropdownMenuContent,
-  DropdownMenuItem,
-  DropdownMenuTrigger,
-  Sidebar, 
-  SidebarContent, 
-  SidebarFooter, 
-  SidebarGroup, 
-  SidebarGroupContent, 
-  SidebarGroupLabel, 
-  SidebarHeader, 
-  SidebarMenu, 
-  SidebarMenuButton, 
-  SidebarMenuItem 
-} from '@cozy/ui'
-import { ChevronUp, Code, FileText, Folder, FolderGit2, Home, Inbox, LogOut, ScrollText, Settings, User2 } from 'lucide-react'
+import {
+  Sidebar,
+  SidebarContent,
+  SidebarFooter,
+  SidebarGroup,
+  SidebarGroupContent,
+  SidebarHeader,
+  SidebarMenu,
+  SidebarMenuButton,
+  SidebarMenuItem,
+} from "@cozy/ui";
+import { FileText, Folder, LogOut, Settings } from "lucide-react";
 
 // Menu items.
 const items = [
@@ -28,20 +23,19 @@ const items = [
     url: "#",
     icon: FileText,
   },
-
   {
     title: "Settings",
-    url: "#",
+    url: "/#",
     icon: Settings,
   },
-]
+];
 
 const AppSidebar = () => {
   return (
     <Sidebar>
-      <SidebarHeader className='flex-row px-4 font-comfortaa items-center gap-3'>
-          <img src="/favicon-96x96.png" alt="Logo" className="size-6" />
-          <h1 className="text-base font-semibold">Admin Dashboard</h1>
+      <SidebarHeader className="flex-row px-4 font-comfortaa items-center gap-3">
+        <img src="/favicon-96x96.png" alt="Logo" className="size-6" />
+        <h1 className="text-base font-semibold">Admin Dashboard</h1>
       </SidebarHeader>
       <SidebarContent>
         <SidebarGroup>
@@ -65,14 +59,14 @@ const AppSidebar = () => {
         <SidebarMenu>
           <SidebarMenuItem>
             <SidebarMenuButton>
-            <LogOut className='text-red-500' />
-            <span>Logout</span>
-            </SidebarMenuButton> 
+              <LogOut className="text-red-500" />
+              <span>Logout</span>
+            </SidebarMenuButton>
           </SidebarMenuItem>
         </SidebarMenu>
       </SidebarFooter>
     </Sidebar>
-  )
-}
+  );
+};
 
-export default AppSidebar
+export default AppSidebar;

@@ -12,6 +12,7 @@
   "scripts": {
     "build": "tailwindcss -i ./src/styles.css -o ./dist/styles.css",
     "lint": "eslint src/",
+    "lint:fix": "eslint --cache --fix --ext .js,.jsx,.ts,.tsx src",
     "dev": "tailwindcss -i ./src/styles.css -o ./dist/styles.css --watch",
     "shad": "bunx --bun shadcn@latest add",
     "type-check": "tsc --noEmit"

@@ -1,5 +1,5 @@
+import { wait } from "@cozy/utils";
 import React from "react";
-import { wait } from "@cozy/utils"
 
 export interface user {
   email: string;

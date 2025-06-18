@@ -1,12 +1,13 @@
-import { authClient } from '@/lib/auth';
-import PageLoader from '@/components/layout/PageLoader';
-import { createFileRoute, Outlet, redirect } from '@tanstack/react-router'
-import { SidebarProvider, SidebarTrigger } from '@cozy/ui';
-import AppSidebar from '@/components/layout/AppSidebar';
+import { SidebarProvider, SidebarTrigger } from "@cozy/ui";
+import { createFileRoute, Outlet, redirect } from "@tanstack/react-router";
+
+import AppSidebar from "@/components/layout/AppSidebar";
+import PageLoader from "@/components/layout/PageLoader";
+import { authClient } from "@/lib/auth";
 
 export const Route = createFileRoute("/_main")({
   beforeLoad: async ({ location }) => {
-    const session  = await authClient.getSession();
+    const session = await authClient.getSession();
     if (!session.data?.user) {
       throw redirect({
         to: "/login",
