@@ -8,7 +8,8 @@
       "@cozy/ui/lib/*": ["./src/lib/*"],     // 👈 explicit sub-paths
       "@cozy/ui/utils/*": ["./src/utils/*"],
       "@cozy/ui/hooks/*": ["./src/hooks/*"]
-    }
+    },
+    "rootDir": "./src",
   },
   "include": ["src"],
   "exclude": ["node_modules", "dist"]
