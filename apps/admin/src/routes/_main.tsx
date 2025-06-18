@@ -1,6 +1,8 @@
-import PageLoader from '@/components/layout/PageLoader';
 import { authClient } from '@/lib/auth';
+import PageLoader from '@/components/layout/PageLoader';
 import { createFileRoute, Outlet, redirect } from '@tanstack/react-router'
+import { SidebarProvider, SidebarTrigger } from '@cozy/ui';
+import AppSidebar from '@/components/layout/AppSidebar';
 
 export const Route = createFileRoute("/_main")({
   beforeLoad: async ({ location }) => {
@@ -20,8 +22,12 @@ export const Route = createFileRoute("/_main")({
 
 function MainLayout() {
   return (
-    <div className="flex flex-row w-screen h-screen overflow-clip scrollbar-none">
-      <Outlet />
-    </div>
+    <SidebarProvider>
+      <AppSidebar />
+      <div className="flex flex-row h-screen overflow-clip scrollbar-none">
+        <SidebarTrigger />
+        <Outlet />
+      </div>
+    </SidebarProvider>
   );
 }

@@ -14,6 +14,7 @@
     "start-admin": "turbo run admin#start @cozy/ui#dev @cozy/styling#dev",
     "dev-admin": "turbo run admin#dev @cozy/ui#dev @cozy/styling#dev",
     "build-admin": "turbo run admin#build",
+    "shadd": "turbo run @cozy/ui#shad",
     "format": "prettier --write \"**/*.{ts,tsx,md}\"",
     "check-types": "turbo run check-types"
   },
