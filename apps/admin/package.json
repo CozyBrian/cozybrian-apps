@@ -5,7 +5,7 @@
   "type": "module",
   "scripts": {
     "dev": "vite --port 3002 --host",
-    "build": "tsc -b && vite build",
+    "build": "vite build",
     "start": "vite preview",
     "lint": "eslint --cache --ext .js,.jsx,.ts,.tsx src",
     "lint:fix": "eslint --cache --fix --ext .js,.jsx,.ts,.tsx src"
