@@ -12,17 +12,20 @@
     "check-types": "tsc --noEmit"
   },
   "dependencies": {
+    "motion": "^12.18.1",
     "next": "^15.3.0",
     "postcss": "^8.5.4",
     "react": "19.1.0",
     "react-dom": "19.1.0",
     "resend": "^4.6.0",
-    "tailwindcss": "^4.1.8"
+    "tailwindcss": "^4.1.8",
+    "usehooks-ts": "^3.1.1"
   },
   "devDependencies": {
     "@cozy/db": "workspace:*",
     "@cozy/styling": "workspace:*",
     "@cozy/ui": "workspace:*",
+    "@cozy/utils": "workspace:*",
     "@repo/eslint-config": "*",
     "@repo/typescript-config": "*",
     "@types/node": "^22.15.3",
