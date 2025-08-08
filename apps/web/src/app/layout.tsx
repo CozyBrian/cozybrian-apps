@@ -1,4 +1,5 @@
 import FONTS from "@/assets/fonts";
+import Footer from "@/components/layout/footer";
 import Header from "@/components/layout/header";
 
 import type { Metadata, Viewport } from "next";
@@ -19,10 +20,11 @@ export const metadata: Metadata = {
   keywords: [
     "Brian Newton",
     "CozyBrian",
+    "Software Engineer",
+    "Mobile Engineer",
     "Software Development",
     "Web Development",
     "Frontend Development",
-    "Software Engineer",
   ],
   openGraph: {
     title: "Brian Newton | Hey 👀",
@@ -53,6 +55,7 @@ export default function RootLayout({
       <body>
         <Header />
         {children}
+        <Footer />
       </body>
     </html>
   );

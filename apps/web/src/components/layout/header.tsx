@@ -41,7 +41,20 @@ const Header = () => {
         <Link href="/" className="w-fit h-11">
           <Image src={CozyMinecraft} className="h-full w-[72px]" alt="Logo" />
         </Link>
-        <div className="w-11 h-11 bg- slate-600"></div>
+        <div className="flex flex-row items-center gap-5">
+          <Link
+            href="/"
+            className="text-sm font-montserrat text-cozy-400 hover:text-cozy-300 transition-colors"
+          >
+            Home
+          </Link>
+          <Link
+            href={process.env.NEXT_PUBLIC_BLOG_URL || "localhost:3001"}
+            className="text-sm font-montserrat text-cozy-400 hover:text-cozy-300 transition-colors"
+          >
+            Blog
+          </Link>
+        </div>
       </div>
       <div
         style={{

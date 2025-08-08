@@ -13,6 +13,7 @@
         "BETTER_AUTH_SECRET", 
         "BETTER_AUTH_URL", 
         "VITE_BETTER_AUTH_URL",
+        "NEXT_PUBLIC_BLOG_URL",
         "NODE_ENV"
       ]
     },
