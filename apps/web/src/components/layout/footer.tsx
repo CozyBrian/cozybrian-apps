@@ -5,7 +5,7 @@ import { Favicon } from "@/assets/images";
 
 const Footer = () => {
   return (
-    <footer className="w-[880px] mx-auto flex flex-col gap-8 border-t border-cozy-950 py-4 mt-32">
+    <footer className="w-full lg:w-[880px] px-4 lg:px-0 mx-auto flex flex-col gap-8 border-t border-cozy-950 py-4 mt-32">
       <p className="text-xs text-cozy-300 font-montserrat">
         Feel free to reach out if you’d like to work together or just geek out
         over cool tech. <br />{" "}

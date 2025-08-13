@@ -1,6 +1,6 @@
 "use client";
 
-import { AnimatedBackground } from "@cozy/ui"; // adjust path
+import { AnimatedBackground } from "@cozy/ui";
 import Link from "next/link";
 import React from "react";
 
@@ -32,17 +32,17 @@ const WritingsSection = () => {
   return (
     <section className="w-full flex flex-col gap-2.5">
       <h2 className="text-cozy-50 tracking-wide">Writings</h2>
-      <div className="grid grid-cols-3 gap-2.5">
-        <div className="relative col-span-2">
-          <AnimatedBackground enableHover className="bg-cozy-950 rounded-md">
+      <div className="grid grid-cols-1 lg:grid-cols-3">
+        <div className="col-span-2 flex flex-col gap-1.5">
+          <AnimatedBackground enableHover className="bg-cozy-950">
             {placeholderWritings.map((writing) => (
               <Link
                 href={`/blog/${writing.id}`}
                 key={writing.id}
                 data-id={`card-${writing.id}`}
-                className="py-2.5 px-2 text-sm rounded-md cursor-pointer transition-colors"
+                className="w-full flex text-sm"
               >
-                <div className="flex flex-row gap-2">
+                <div className="flex flex-1 flex-row py-2.5 px-2 gap-2">
                   <div className="flex-1 flex flex-col gap-1">
                     <h3 className="font-bold text-cozy-100">{writing.title}</h3>
                     <p className="text-xs text-cozy-400">

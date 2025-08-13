@@ -4,8 +4,8 @@ import WritingsSection from "./(components)/writings-section";
 
 export default function Home() {
   return (
-    <main className="flex w-[880px] min-h-screen flex-col items-center gap-12 mx-auto mt-[120px]">
-      <section className="w-full flex flex-col gap-8 tracking-wide pt-3.5">
+    <main className="flex w-full lg:w-[880px] px-4 lg:px-0 min-h-screen flex-col items-center gap-12 mx-auto mt-[60px] md:mt-[120px]">
+      <section className="w-full flex flex-col gap-8 tracking-wide pt-10 pb-10 lg:pt-3.5 lg:pb-0">
         <div className="flex flex-col items-start">
           <h1 className="text-[32px] font-bold text-cozy-50 leading-[44px]">
             Brian Newton
@@ -14,7 +14,7 @@ export default function Home() {
             Software Engineer, Earth.
           </p>
         </div>
-        <div className="flex flex-col gap-4 w-[480px]">
+        <div className="flex flex-col gap-4 w-full lg:w-[480px]">
           <p className="font-montserrat font-medium text-sm text-cozy-200 tracking-wide">
             I write software for the web and mobile, build tools that solve
             real-world problems, and enjoy exploring ideas that sit at the edge
@@ -36,7 +36,9 @@ export default function Home() {
               <a
                 key={index}
                 href={item.href}
+                target="_blank"
                 className="text-xs font-montserrat text-cozy-600 hover:text-cozy-400 transition-colors"
+                rel="noreferrer"
               >
                 {item.label}
               </a>

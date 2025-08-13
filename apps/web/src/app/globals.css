@@ -1,5 +1,7 @@
 @import "tailwindcss";
 @import "@cozy/styling/theme.css";
+@import "@cozy/ui/styles.css";
+@source "../../../../node_modules/@cozy/ui";
 
 :root {
   --background: oklch(0.9726 0.0086 264.5223);

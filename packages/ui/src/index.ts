@@ -11,5 +11,4 @@ export * from "./components/ui/tooltip";
 export * from "./components/ui/skeleton";
 export * from "./components/ui/dropdown-menu";
 
-export * from "./components/effects/highlight";
 export * from "./components/effects/background";
