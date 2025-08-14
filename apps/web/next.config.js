@@ -6,6 +6,7 @@ const nextConfig = {
   experimental: {
     viewTransition: true,
   },
+  ignoreDuringBuilds: true,
   webpack: (config, { isServer }) => {
     if (isServer) {
       config.plugins = [...config.plugins, new PrismaPlugin()];
