@@ -56,5 +56,11 @@
     "tailwindcss": "^4.1.8",
     "tw-animate-css": "^1.3.4",
     "yup": "^1.6.1"
+  },
+  "overrides": {
+    "react": "19.1.0",
+    "react-dom": "19.1.0",
+    "@types/react": "0.0.0-REMOVE",
+    "@types/react-dom": "0.0.0-REMOVE"
   }
 }
