@@ -1,4 +1,4 @@
-import React from "react";
+import React, { ReactNode } from "react";
 
 export const metadata = {
   title: {
@@ -8,10 +8,6 @@ export const metadata = {
   description: "A showcase of my work and projects.",
 };
 
-export default function WorkLayout({
-  children,
-}: Readonly<{
-  children: React.ReactNode;
-}>) {
+export default function WorkLayout({ children }: { children: ReactNode }) {
   return <>{children}</>;
 }
