@@ -60,7 +60,7 @@
   "overrides": {
     "react": "19.1.0",
     "react-dom": "19.1.0",
-    "@types/react": "0.0.0-REMOVE",
-    "@types/react-dom": "0.0.0-REMOVE"
+    "@types/react": "19.1.8",
+    "@types/react-dom": "19.1.6"
   }
 }

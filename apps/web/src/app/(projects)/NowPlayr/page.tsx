@@ -16,7 +16,6 @@ export const metadata: Metadata = {
   title: "NowPlayr",
   description:
     "The beautiful, sleek, open-source music preview for macOS. Your music, at a glance.",
-  themeColor: "#060D14",
   keywords: [
     "Brian Newton",
     "CozyBrian",
