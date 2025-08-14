@@ -33,7 +33,7 @@ const Header = () => {
       transition={{ duration: 0.1 }}
       className={cn(
         "fixed top-0 left-0 flex items-center justify-center h-[120px] z-30",
-        "bg-opacity-20 bg-tesla-900 w-full border-b duration-100",
+        "bg-opacity-20 bg-cozy-900 w-full border-b duration-100",
         isScrolled ? "border-cozy-900" : "border-transparent",
       )}
     >

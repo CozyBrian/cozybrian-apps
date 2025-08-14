@@ -48,7 +48,10 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className={`dark scroll-smooth ${FONTS.variable}`}>
+    <html
+      lang="en"
+      className={`dark scroll-smooth text-cozy-50 ${FONTS.variable}`}
+    >
       <head>
         <link rel="canonical" href="https://www.cozybrian.dev" />
       </head>

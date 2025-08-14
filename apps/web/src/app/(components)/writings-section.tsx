@@ -31,7 +31,7 @@ const placeholderWritings = [
 const WritingsSection = () => {
   return (
     <section className="w-full flex flex-col gap-2.5">
-      <h2 className="text-cozy-50 tracking-wide">Writings</h2>
+      <h2 className="text-cozy-50 tracking-wide font-semibold">Writings</h2>
       <div className="grid grid-cols-1 lg:grid-cols-3">
         <div className="col-span-2 flex flex-col gap-1.5">
           <AnimatedBackground enableHover className="bg-cozy-950">
@@ -44,7 +44,9 @@ const WritingsSection = () => {
               >
                 <div className="flex flex-1 flex-row py-2.5 px-2 gap-2">
                   <div className="flex-1 flex flex-col gap-1">
-                    <h3 className="font-bold text-cozy-100">{writing.title}</h3>
+                    <h3 className="font-medium text-cozy-100">
+                      {writing.title}
+                    </h3>
                     <p className="text-xs text-cozy-400">
                       {writing.description}
                     </p>
