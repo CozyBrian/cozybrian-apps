@@ -8,24 +8,40 @@
     "build": "next build",
     "start": "next start",
     "lint": "next lint --max-warnings 0",
+    "lint:fix": "eslint --cache --fix --ext .js,.jsx,.ts,.tsx src",
     "check-types": "tsc --noEmit"
   },
   "dependencies": {
-    "next": "^15.3.0",
+    "@mdx-js/loader": "^3.1.0",
+    "@mdx-js/react": "^3.1.0",
+    "@next/mdx": "^15.4.6",
+    "@types/mdx": "^2.0.13",
+    "motion": "^12.18.1",
+    "next": "15.4.1",
     "postcss": "^8.5.4",
     "react": "19.1.0",
     "react-dom": "19.1.0",
-    "tailwindcss": "^4.1.8"
+    "resend": "^4.6.0",
+    "tailwindcss": "^4.1.8",
+    "usehooks-ts": "^3.1.1"
   },
   "devDependencies": {
+    "@cozy/db": "workspace:*",
     "@cozy/styling": "workspace:*",
     "@cozy/ui": "workspace:*",
+    "@cozy/utils": "workspace:*",
     "@repo/eslint-config": "*",
     "@repo/typescript-config": "*",
     "@types/node": "^22.15.3",
-    "@types/react": "19.1.0",
-    "@types/react-dom": "19.1.0",
+    "@types/react": "19.1.8",
+    "@types/react-dom": "19.1.6",
     "eslint": "^9.28.0",
+    "remark-frontmatter": "^5.0.0",
+    "remark-mdx-frontmatter": "^5.2.0",
     "typescript": "~5.8.3"
+  },
+  "overrides": {
+    "@types/react": "19.1.8",
+    "@types/react-dom": "19.1.6"
   }
 }

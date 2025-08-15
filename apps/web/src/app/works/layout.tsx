@@ -1,0 +1,13 @@
+import React, { ReactNode } from "react";
+
+export const metadata = {
+  title: {
+    default: "Works",
+    template: "%s | Brian Newton",
+  },
+  description: "A showcase of my work and projects.",
+};
+
+export default function WorkLayout({ children }: { children: ReactNode }) {
+  return <>{children}</>;
+}

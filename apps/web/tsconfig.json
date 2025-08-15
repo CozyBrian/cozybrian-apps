@@ -5,15 +5,18 @@
       {
         "name": "next"
       }
-    ]
+    ],
+    "paths": {
+      "@/*": ["./src/*"]
+    }
   },
   "include": [
     "**/*.ts",
     "**/*.tsx",
     "next-env.d.ts",
-    "next.config.js",
+    "next.config.ts",
     ".next/types/**/*.ts"
-  ],
+, "mdx-components.jsx"  ],
   "exclude": [
     "node_modules"
   ]

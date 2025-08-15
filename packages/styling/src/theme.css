@@ -1,4 +1,4 @@
-@import "tailwindcss";
+/* @import "tailwindcss"; */
 @import "tw-animate-css";
 
 @custom-variant dark (&:is(.dark *));
@@ -114,26 +114,27 @@
 }
 
 @layer base {
-  * {
-    @apply border-border outline-ring/50;
-  }
   body {
     @apply bg-background text-foreground;
+  }
+
+  button {
+    cursor: pointer;
   }
 }
 
 /* packages/design-system/theme.css */
 @theme {
-  --color-cozy: oklch(53.73% 0.192 264);
-  --color-cozy-50: oklch(91.45% 0.023 264);
-  --color-cozy-100: oklch(84% 0.053 263);
-  --color-cozy-200: oklch(76.41% 0.089 264);
-  --color-cozy-300: oklch(68.9% 0.128 263);
-  --color-cozy-400: oklch(61.26% 0.165 264);
-  --color-cozy-500: oklch(53.73% 0.192 264);
-  --color-cozy-600: oklch(46.08% 0.213 264);
-  --color-cozy-700: oklch(38.4% 0.211 264);
-  --color-cozy-800: oklch(30.46% 0.192 264);
-  --color-cozy-900: oklch(21.78% 0.151 264);
-  --color-cozy-950: oklch(13.72% 0.074 263);
+  --color-cozy-50: oklch(97.26% 0.0086 264.52);
+  --color-cozy-100: oklch(94.60% 0.0160 253.90);
+  --color-cozy-200: oklch(88.34% 0.0344 249.59);
+  --color-cozy-300: oklch(78.18% 0.0658 249.38);
+  --color-cozy-400: oklch(66.64% 0.1002 248.70);
+  --color-cozy-500: oklch(57.35% 0.1160 250.22);
+  --color-cozy-600: oklch(52.11% 0.1199 252.99);
+  --color-cozy-700: oklch(41.98% 0.0942 254.34);
+  --color-cozy-800: oklch(38.05% 0.0766 252.73);
+  --color-cozy-900: oklch(34.40% 0.0630 254.59);
+  --color-cozy-950: oklch(26.29% 0.0464 257.85);
+  --color-cozy-background: oklch(16.54% 0.0203 251.89);
 }

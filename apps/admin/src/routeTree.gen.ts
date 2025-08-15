@@ -12,6 +12,7 @@ import { Route as rootRouteImport } from './routes/__root'
 import { Route as MainRouteImport } from './routes/_main'
 import { Route as AuthRouteImport } from './routes/_auth'
 import { Route as MainIndexRouteImport } from './routes/_main/index'
+import { Route as AuthOtpInputRouteImport } from './routes/_auth/otp-input'
 import { Route as AuthLoginRouteImport } from './routes/_auth/login'
 
 const MainRoute = MainRouteImport.update({
@@ -27,6 +28,11 @@ const MainIndexRoute = MainIndexRouteImport.update({
   path: '/',
   getParentRoute: () => MainRoute,
 } as any)
+const AuthOtpInputRoute = AuthOtpInputRouteImport.update({
+  id: '/otp-input',
+  path: '/otp-input',
+  getParentRoute: () => AuthRoute,
+} as any)
 const AuthLoginRoute = AuthLoginRouteImport.update({
   id: '/login',
   path: '/login',
@@ -34,13 +40,13 @@ const AuthLoginRoute = AuthLoginRouteImport.update({
 } as any)
 
 export interface FileRoutesByFullPath {
-  '': typeof MainRouteWithChildren
   '/login': typeof AuthLoginRoute
+  '/otp-input': typeof AuthOtpInputRoute
   '/': typeof MainIndexRoute
 }
 export interface FileRoutesByTo {
-  '': typeof AuthRouteWithChildren
   '/login': typeof AuthLoginRoute
+  '/otp-input': typeof AuthOtpInputRoute
   '/': typeof MainIndexRoute
 }
 export interface FileRoutesById {
@@ -48,14 +54,21 @@ export interface FileRoutesById {
   '/_auth': typeof AuthRouteWithChildren
   '/_main': typeof MainRouteWithChildren
   '/_auth/login': typeof AuthLoginRoute
+  '/_auth/otp-input': typeof AuthOtpInputRoute
   '/_main/': typeof MainIndexRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '' | '/login' | '/'
+  fullPaths: '/login' | '/otp-input' | '/'
   fileRoutesByTo: FileRoutesByTo
-  to: '' | '/login' | '/'
-  id: '__root__' | '/_auth' | '/_main' | '/_auth/login' | '/_main/'
+  to: '/login' | '/otp-input' | '/'
+  id:
+    | '__root__'
+    | '/_auth'
+    | '/_main'
+    | '/_auth/login'
+    | '/_auth/otp-input'
+    | '/_main/'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
@@ -86,6 +99,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof MainIndexRouteImport
       parentRoute: typeof MainRoute
     }
+    '/_auth/otp-input': {
+      id: '/_auth/otp-input'
+      path: '/otp-input'
+      fullPath: '/otp-input'
+      preLoaderRoute: typeof AuthOtpInputRouteImport
+      parentRoute: typeof AuthRoute
+    }
     '/_auth/login': {
       id: '/_auth/login'
       path: '/login'
@@ -98,10 +118,12 @@ declare module '@tanstack/react-router' {
 
 interface AuthRouteChildren {
   AuthLoginRoute: typeof AuthLoginRoute
+  AuthOtpInputRoute: typeof AuthOtpInputRoute
 }
 
 const AuthRouteChildren: AuthRouteChildren = {
   AuthLoginRoute: AuthLoginRoute,
+  AuthOtpInputRoute: AuthOtpInputRoute,
 }
 
 const AuthRouteWithChildren = AuthRoute._addFileChildren(AuthRouteChildren)

@@ -1,5 +1,10 @@
-[{
+{
+  // Tell VS Code to treat plain CSS as Tailwind CSS
   "files.associations": {
     "*.css": "tailwindcss"
-  }
-}]
+  },
+  "editor.codeActionsOnSave": {
+    "source.fixAll.eslint": "explicit"
+  },
+  "eslint.workingDirectories": [{ "mode": "auto" }]
+}

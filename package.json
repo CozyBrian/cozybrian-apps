@@ -5,6 +5,7 @@
     "build": "turbo run build",
     "dev": "turbo run dev",
     "lint": "turbo run lint",
+    "lint:fix": "turbo run lint:fix",
     "start-web": "turbo run web#start @cozy/ui#dev @cozy/styling#dev",
     "dev-web": "turbo run web#dev @cozy/ui#dev @cozy/styling#dev",
     "build-web": "turbo run web#build",
@@ -14,10 +15,19 @@
     "start-admin": "turbo run admin#start @cozy/ui#dev @cozy/styling#dev",
     "dev-admin": "turbo run admin#dev @cozy/ui#dev @cozy/styling#dev",
     "build-admin": "turbo run admin#build",
+    "shadd": "turbo run @cozy/ui#shad",
     "format": "prettier --write \"**/*.{ts,tsx,md}\"",
     "check-types": "turbo run check-types"
   },
   "devDependencies": {
+    "@typescript-eslint/eslint-plugin": "^8.34.1",
+    "@typescript-eslint/parser": "^8.34.1",
+    "eslint-import-resolver-typescript": "^4.4.3",
+    "eslint-plugin-import": "^2.31.0",
+    "eslint-plugin-prettier": "^5.5.0",
+    "eslint-plugin-react": "^7.37.5",
+    "eslint-plugin-unused-imports": "^4.1.4",
+    "ignore": "^7.0.5",
     "prettier": "^3.5.3",
     "syncpack": "^14.0.0-alpha.13",
     "turbo": "^2.5.4",
@@ -32,14 +42,28 @@
     "packages/*"
   ],
   "dependencies": {
+    "@prisma/nextjs-monorepo-workaround-plugin": "^6.9.0",
     "@tailwindcss/cli": "^4.1.8",
     "@tailwindcss/postcss": "^4.1.8",
-    "@tanstack/react-query": "^5.80.6",
+    "@tanstack/react-query": "^5.80.7",
+    "better-auth": "^1.2.9",
     "class-variance-authority": "^0.7.1",
     "clsx": "^2.1.1",
+    "date-fns": "^4.1.0",
+    "formik": "^2.4.6",
     "lucide-react": "^0.514.0",
+    "motion": "^12.23.12",
+    "rehype-pretty-code": "^0.14.1",
+    "shiki": "^3.9.2",
     "tailwind-merge": "^3.3.1",
     "tailwindcss": "^4.1.8",
-    "tw-animate-css": "^1.3.4"
+    "tw-animate-css": "^1.3.4",
+    "yup": "^1.6.1"
+  },
+  "overrides": {
+    "react": "19.1.0",
+    "react-dom": "19.1.0",
+    "@types/react": "19.1.8",
+    "@types/react-dom": "19.1.6"
   }
 }
