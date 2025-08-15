@@ -1,4 +1,5 @@
 import { format } from "date-fns";
+import { Metadata } from "next";
 import { notFound } from "next/navigation";
 import { unstable_ViewTransition as ViewTransition } from "react";
 
@@ -14,7 +15,9 @@ export async function generateStaticParams() {
   return posts.map((post) => ({ slug: post.slug }));
 }
 
-export async function generateMetadata({ params }: pageProps) {
+export async function generateMetadata({
+  params,
+}: pageProps): Promise<Metadata> {
   const { slug } = await params;
   const mdxData = await getMDXData(slug);
 
@@ -30,15 +33,20 @@ export async function generateMetadata({ params }: pageProps) {
   return {
     title: String(metadata?.title ?? slug),
     description: String(metadata?.description ?? ""),
-    // openGraph: {
-    //   images: [
-    //     {
-    //       url: `/api/og/${slug}`,
-    //       width: 1200,
-    //       height: 630,
-    //     },
-    //   ],
-    // },
+    openGraph: {
+      title: String(metadata?.title ?? slug),
+      description: String(metadata?.summary ?? ""),
+      type: "article",
+      url: `https://www.cozybrian.com/blog/${slug}`,
+      authors: ["Brian Newton <https://www.cozybrian.com>"],
+      images: [
+        {
+          url: `/api/og/${slug}`,
+          width: 1200,
+          height: 630,
+        },
+      ],
+    },
   };
 }
 
@@ -52,18 +60,20 @@ export default async function Page({ params }: pageProps) {
   const { metadata, default: Content } = mdxFile;
 
   return (
-    <div>
-      <ViewTransition name={slug}>
-        <h1 className="text-3xl font-bold mb-1">{metadata.title}</h1>
-      </ViewTransition>
-      <p className="text-sm text-cozy-500">
-        {format(new Date(metadata.date), "dd MMM yyyy")}
-      </p>
-      <div className="grid grid-cols-1 md:grid-cols-4 mt-5">
-        <div className="col-span-1 md:col-span-3">
-          <Content components={components} />
+    <ViewTransition>
+      <div>
+        <ViewTransition name={slug}>
+          <h1 className="text-3xl font-bold mb-1">{metadata.title}</h1>
+        </ViewTransition>
+        <p className="text-sm text-cozy-500">
+          {format(new Date(metadata.date), "dd MMM yyyy")}
+        </p>
+        <div className="grid grid-cols-1 md:grid-cols-4 mt-5">
+          <div className="col-span-1 md:col-span-3">
+            <Content components={components} />
+          </div>
         </div>
       </div>
-    </div>
+    </ViewTransition>
   );
 }
