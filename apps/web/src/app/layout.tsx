@@ -1,3 +1,5 @@
+import { Analytics } from "@vercel/analytics/next";
+
 import FONTS from "@/assets/fonts";
 import Footer from "@/components/layout/footer";
 import Header from "@/components/layout/header";
@@ -59,6 +61,7 @@ export default function RootLayout({
         <Header />
         {children}
         <Footer />
+        <Analytics />
       </body>
     </html>
   );
