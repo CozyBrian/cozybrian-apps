@@ -1,7 +1,10 @@
-import type { Metadata, Viewport } from "next";
+import { Analytics } from "@vercel/analytics/next";
 
 import FONTS from "@/assets/fonts";
+import Footer from "@/components/layout/footer";
 import Header from "@/components/layout/header";
+
+import type { Metadata, Viewport } from "next";
 
 import "./globals.css";
 
@@ -11,12 +14,13 @@ export const viewport: Viewport = {
 
 export const metadata: Metadata = {
   title: {
-    default: "Brian Newton | Hey 👀",
+    default: "Blog | Brian Newton👀",
     template: "%s | Brian Newton",
   },
   description: "Brian Newton's personal blog",
   metadataBase: new URL("https://blog.cozybrian.dev"),
   keywords: [
+    "Blog",
     "Brian Newton",
     "CozyBrian",
     "Software Development",
@@ -25,9 +29,9 @@ export const metadata: Metadata = {
     "Software Engineer",
   ],
   openGraph: {
-    title: "Brian Newton | Hey 👀",
+    title: "Blog | Brian Newton👀",
     description:
-      "A showcase of my passion for Software Development—view my work here.",
+      "Explore my thoughts and insights on software development and more.",
     locale: "en_US",
     type: "website",
   },
@@ -48,11 +52,13 @@ export default function RootLayout({
   return (
     <html lang="en" className={`dark scroll-smooth ${FONTS.variable}`}>
       <head>
-        <link rel="canonical" href="https://www.cozybrian.dev" />
+        <link rel="canonical" href="https://blog.cozybrian.dev" />
       </head>
       <body>
         <Header />
         {children}
+        <Footer />
+        <Analytics />
       </body>
     </html>
   );

@@ -33,15 +33,22 @@ const Header = () => {
       transition={{ duration: 0.1 }}
       className={cn(
         "fixed top-0 left-0 flex items-center justify-center h-[120px] z-30",
-        "bg-opacity-20 bg-cozy-900 w-full border-b duration-100",
+        "bg-opacity-20 bg-cozy-background w-full border-b duration-100",
         isScrolled ? "border-cozy-900" : "border-transparent",
       )}
     >
-      <div className="w-full px-4 md:px-0 md:w-[880px] h-full flex flex-row items-center justify-between z-50">
+      <div className="w-full px-4 lg:px-0 lg:w-[880px] h-full flex flex-row items-center justify-between z-50">
         <Link href="/" className="w-fit h-11">
           <Image src={CozyMinecraft} className="h-full w-[72px]" alt="Logo" />
         </Link>
-        <div className="w-11 h-11 bg- slate-600"></div>
+        <div className="flex flex-row items-center gap-5">
+          <Link
+            href={process.env.NEXT_PUBLIC_HOME_URL || "localhost:3000"}
+            className="text-sm font-montserrat text-cozy-400 hover:text-cozy-300 transition-colors"
+          >
+            Personal
+          </Link>
+        </div>
       </div>
       <div
         style={{
