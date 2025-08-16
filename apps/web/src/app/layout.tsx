@@ -56,6 +56,11 @@ export default function RootLayout({
     >
       <head>
         <link rel="canonical" href="https://www.cozybrian.dev" />
+        <script
+          defer
+          src="https://cloud.umami.is/script.js"
+          data-website-id="f33cd8ae-8673-43c1-a0a7-7d25c2066e44"
+        ></script>
       </head>
       <body>
         <Header />
