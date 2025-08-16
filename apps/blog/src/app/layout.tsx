@@ -53,6 +53,11 @@ export default function RootLayout({
     <html lang="en" className={`dark scroll-smooth ${FONTS.variable}`}>
       <head>
         <link rel="canonical" href="https://blog.cozybrian.dev" />
+        <script
+          defer
+          src="https://cloud.umami.is/script.js"
+          data-website-id="852d138f-74ae-4b04-9943-5b06dd1778ff"
+        ></script>
       </head>
       <body>
         <Header />
