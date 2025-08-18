@@ -2,7 +2,7 @@
 @import "@cozy/styling/theme.css";
 @import "@cozy/ui/styles.css";
 @source "../../../../node_modules/@cozy/ui";
-@source "../../mdx-components.tsx";
+@source "../../../../node_modules/@cozy/blog";
 
 :root {
   --background: oklch(0.9726 0.0086 264.5223);

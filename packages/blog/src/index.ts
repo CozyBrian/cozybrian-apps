@@ -137,3 +137,5 @@ export function headingToRoute(header: string): string {
 
 export * from "./types";
 export * from "./components"
+export * from "./mdx-components"
+export * from "./og-image";
