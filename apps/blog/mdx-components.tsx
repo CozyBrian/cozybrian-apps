@@ -1,21 +1,35 @@
+import { headingToRoute } from "@/lib/posts";
+
 import type { MDXComponents } from "mdx/types";
+
 // Allows customizing built-in components, e.g. to add styling.
 const components: MDXComponents = {
   h1: ({ children }) => (
-    <h1 className="text-2xl font-bold text-cozy-200 mt-6 mb-4">{children}</h1>
+    <h1
+      id={"#" + headingToRoute(String(children))}
+      className="text-xl font-bold text-cozy-200 mt-6 mb-4"
+    >
+      {children}
+    </h1>
   ),
   h2: ({ children }) => (
-    <h2 className="text-xl font-semibold text-cozy-200 mt-5 mb-3">
+    <h2
+      id={"#" + headingToRoute(String(children))}
+      className="text-lg font-semibold text-cozy-200 mt-5 mb-3"
+    >
       {children}
     </h2>
   ),
   h3: ({ children }) => (
-    <h3 className="text-lg font-semibold text-cozy-200 mt-4 mb-2">
+    <h3
+      id={"#" + headingToRoute(String(children))}
+      className="text-base font-semibold text-cozy-200 mt-4 mb-2"
+    >
       {children}
     </h3>
   ),
   p: ({ children }) => (
-    <p className="text-base leading-relaxed mb-4">{children}</p>
+    <p className="text-sm leading-relaxed mb-4">{children}</p>
   ),
   ul: ({ children }) => (
     <ul className="list-disc list-inside mb-4">{children}</ul>
@@ -42,11 +56,30 @@ const components: MDXComponents = {
       {children}
     </a>
   ),
+  table: ({ children }) => (
+    <table className="w-full border-collapse border border-cozy-700 text-sm mb-6 rounded-lg overflow-hidden">
+      {children}
+    </table>
+  ),
+  thead: ({ children }) => (
+    <thead className="bg-cozy-800 text-cozy-200">{children}</thead>
+  ),
+  tbody: ({ children }) => <tbody>{children}</tbody>,
+  tr: ({ children }) => (
+    <tr className="border-b border-cozy-700 last:border-none hover:bg-cozy-900/40 duration-200">
+      {children}
+    </tr>
+  ),
+  th: ({ children }) => (
+    <th className="px-3 py-2 text-left font-semibold text-cozy-100">
+      {children}
+    </th>
+  ),
+  td: ({ children }) => (
+    <td className="px-3 py-2 text-cozy-100 align-top">{children}</td>
+  ),
 };
 
-export function useMDXComponents(): MDXComponents {
-  return components;
-}
 export function getMDXComponents(): MDXComponents {
   return components;
 }

@@ -38,3 +38,9 @@ export type MDXFile = {
   default: React.ComponentType<MDXProps>;
   metadata: MDXFileMeta;
 };
+
+export type MDXHeader = {
+  level: number;
+  title: string;
+  id: string;
+};

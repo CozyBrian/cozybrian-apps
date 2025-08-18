@@ -50,7 +50,7 @@ export async function GET(
           />
         </div>
         <div style={{ display: "flex", flexDirection: "column" }}>
-          <h1 style={{ fontSize: 48, fontWeight: "bold", color: "#e6eef8" }}>
+          <h1 style={{ fontSize: 64, fontWeight: "bold", color: "#e6eef8" }}>
             {post.metadata.title}
           </h1>
           <p style={{ fontSize: 32, color: "#6199cf" }}>

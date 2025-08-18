@@ -26,7 +26,7 @@ export default function Home() {
             <div className="flex flex-row gap-2.5">
               {[
                 { label: "GitHub", href: "https://github.com/CozyBrian" },
-                { label: "X", href: "https://x.com/cozybrian_" },
+                { label: "Twitter (X)", href: "https://x.com/cozybrian_" },
                 {
                   label: "LinkedIn",
                   href: "https://www.linkedin.com/in/brian-newton-b6b8231b8",
