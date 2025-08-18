@@ -1,12 +1,10 @@
+import { getMDXData, getPosts, getMDXComponents } from "@cozy/blog";
 import { format } from "date-fns";
 import { Metadata } from "next";
 import { notFound } from "next/navigation";
 import { unstable_ViewTransition as ViewTransition } from "react";
 
-import { getMDXData, getPosts } from "@/lib/posts";
-
 import TableOfContents from "./(components)/TableOfContents";
-import { getMDXComponents } from "../../../mdx-components";
 type pageProps = {
   params: Promise<{ slug: string }>;
 };
@@ -33,7 +31,7 @@ export async function generateMetadata({
 
   return {
     title: String(metadata?.title ?? slug),
-    description: String(metadata?.description ?? ""),
+    description: String(metadata?.summary ?? ""),
     openGraph: {
       title: String(metadata?.title ?? slug),
       description: String(metadata?.summary ?? ""),

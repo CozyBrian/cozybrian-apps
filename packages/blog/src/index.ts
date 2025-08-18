@@ -8,7 +8,7 @@ import remarkFrontmatter from "remark-frontmatter";
 import remarkGfm from "remark-gfm";
 import remarkMdxFrontmatter from "remark-mdx-frontmatter";
 
-import type { MDXFile, MDXFileMeta, MDXHeader } from "@/types";
+import type { MDXFile, MDXFileMeta, MDXHeader } from "./types";
 
 const __DEV__ = process.env.NODE_ENV === "development";
 
@@ -17,8 +17,9 @@ const POSTS_DIR = path.join(
   "..",
   "..",
   "packages",
-  "data",
+  "blog",
   "src",
+  "content",
 );
 
 const prettyCodeOptions: Options = {
@@ -133,3 +134,6 @@ export function headingToRoute(header: string): string {
     .replace(/-+/g, "-")
     .replace(/^-|-$/g, "");
 }
+
+export * from "./types";
+export * from "./components"

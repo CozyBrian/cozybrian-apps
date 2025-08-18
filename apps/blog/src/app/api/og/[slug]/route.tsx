@@ -1,8 +1,7 @@
 /* eslint-disable @next/next/no-img-element */
 
+import { getMDXData } from "@cozy/blog";
 import { ImageResponse } from "next/og";
-
-import { getMDXData } from "@/lib/posts";
 
 export async function GET(
   request: Request,

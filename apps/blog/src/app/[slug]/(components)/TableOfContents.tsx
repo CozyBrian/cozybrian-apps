@@ -3,7 +3,7 @@ import { cn } from "@cozy/utils";
 import { AnimatePresence, motion } from "motion/react";
 import React, { useEffect, useState } from "react";
 
-import { MDXHeader } from "@/types";
+import type { MDXHeader } from "@cozy/blog";
 
 const TableOfContents = ({ data }: { data: MDXHeader[] }) => {
   const [isHover, setisHover] = useState(false);

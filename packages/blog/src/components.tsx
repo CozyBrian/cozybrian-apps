@@ -1,9 +1,8 @@
-import { headingToRoute } from "@/lib/posts";
-
+import { headingToRoute } from ".";
 import type { MDXComponents } from "mdx/types";
 
 // Allows customizing built-in components, e.g. to add styling.
-const components: MDXComponents = {
+export const components: MDXComponents = {
   h1: ({ children }) => (
     <h1
       id={"#" + headingToRoute(String(children))}
