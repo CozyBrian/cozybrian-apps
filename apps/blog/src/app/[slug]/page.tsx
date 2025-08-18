@@ -1,11 +1,14 @@
+import {
+  getMDXData,
+  getPosts,
+  getMDXComponents,
+  TableOfContents,
+} from "@cozy/blog";
 import { format } from "date-fns";
 import { Metadata } from "next";
 import { notFound } from "next/navigation";
 import { unstable_ViewTransition as ViewTransition } from "react";
 
-import { getMDXData, getPosts } from "@/lib/posts";
-
-import { getMDXComponents } from "../../../mdx-components";
 type pageProps = {
   params: Promise<{ slug: string }>;
 };
@@ -32,7 +35,7 @@ export async function generateMetadata({
 
   return {
     title: String(metadata?.title ?? slug),
-    description: String(metadata?.description ?? ""),
+    description: String(metadata?.summary ?? ""),
     openGraph: {
       title: String(metadata?.title ?? slug),
       description: String(metadata?.summary ?? ""),
@@ -57,7 +60,7 @@ export default async function Page({ params }: pageProps) {
     return notFound();
   }
   const components = getMDXComponents();
-  const { metadata, default: Content } = mdxFile;
+  const { metadata, default: Content, headings } = mdxFile;
 
   return (
     <ViewTransition>
@@ -68,10 +71,13 @@ export default async function Page({ params }: pageProps) {
         <p className="text-sm text-cozy-500">
           {format(new Date(metadata.date), "dd MMM yyyy")}
         </p>
-        <div className="grid grid-cols-1 md:grid-cols-4 mt-5">
+        <div className="grid grid-cols-1 md:grid-cols-4 gap-3 mt-5">
           <div className="col-span-1 md:col-span-3">
             <Content components={components} />
           </div>
+          <aside className="hidden md:block col-span-1">
+            <TableOfContents data={headings} />
+          </aside>
         </div>
       </div>
     </ViewTransition>

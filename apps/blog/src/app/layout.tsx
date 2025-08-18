@@ -50,9 +50,19 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className={`dark scroll-smooth ${FONTS.variable}`}>
+    <html
+      lang="en"
+      className={`dark scroll-smooth ${FONTS.variable}`}
+      data-scroll-behavior="smooth"
+    >
       <head>
         <link rel="canonical" href="https://blog.cozybrian.dev" />
+
+        {/* <script
+          crossOrigin="anonymous"
+          src="//unpkg.com/react-scan/dist/auto.global.js"
+        /> */}
+
         <script
           defer
           src="https://cloud.umami.is/script.js"

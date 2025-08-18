@@ -1,9 +1,8 @@
+import { getPosts } from "@cozy/blog";
 import { AnimatedBackground } from "@cozy/ui";
 import { format } from "date-fns";
 import Link from "next/link";
 import { unstable_ViewTransition as ViewTransition } from "react";
-
-import { getPosts } from "@/lib/posts";
 
 const WritingsSection = async () => {
   const allPosts = await getPosts();
