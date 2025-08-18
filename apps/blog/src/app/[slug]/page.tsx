@@ -1,10 +1,14 @@
-import { getMDXData, getPosts, getMDXComponents } from "@cozy/blog";
+import {
+  getMDXData,
+  getPosts,
+  getMDXComponents,
+  TableOfContents,
+} from "@cozy/blog";
 import { format } from "date-fns";
 import { Metadata } from "next";
 import { notFound } from "next/navigation";
 import { unstable_ViewTransition as ViewTransition } from "react";
 
-import TableOfContents from "./(components)/TableOfContents";
 type pageProps = {
   params: Promise<{ slug: string }>;
 };

@@ -16,7 +16,7 @@
     "next-env.d.ts",
     "next.config.js",
     ".next/types/**/*.ts"
-, "next.config.mjs"  ],
+, "next.config.mjs", "../../packages/blog/src/components/TableOfContents.tsx"  ],
   "exclude": [
     "node_modules"
   ]
