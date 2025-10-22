@@ -11,7 +11,7 @@ const Page = () => {
       <h1 className="font-bold text-3xl text-cozy-50 pt-2">
         Passport Tracking System for Ghana
       </h1>
-      <div className="w-full aspect-[880/282] bg-cozy-950"></div>
+      <div className="w-full h-[220px] md:h-auto md:aspect-[880/282] bg-cozy-950"></div>
       <section>
         <h2 className="text-lg font-semibold">Introduction</h2>
         <p>
@@ -22,7 +22,7 @@ const Page = () => {
       </section>
       <section className="flex flex-col gap-1.5">
         <h2 className="text-lg font-semibold">What were the objectives?</h2>
-        <div className="grid grid-cols-2 gap-5">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
           <ul className="list-disc list-inside pl-2.5 py-2.5 space-y-1 tracking-wide">
             {[
               "Guarantee 100% chain-of-custody from printing to delivery",
@@ -64,7 +64,7 @@ const Page = () => {
           point that is the applicants all the way through delivery agents, and
           administrative personnel to the Minister of Foreign Affairs.
         </p>
-        <div className="grid grid-cols-2 gap-5">
+        <div className="flex flex-col-reverse md:grid md:grid-cols-2  gap-5">
           <div>
             <p>Brief overview of what I built include:</p>
             <ul className="list-disc list-inside pl-2.5 pb-2.5 space-y-1 tracking-wide">
