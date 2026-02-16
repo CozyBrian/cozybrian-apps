@@ -9,7 +9,7 @@ const corsOptions = {
   credentials: true,
 };
 
-export async function middleware(request: NextRequest) {
+export async function proxy(request: NextRequest) {
   const response = NextResponse.next();
   const origin = request.headers.get("origin") ?? "";
   const isProd = process.env.NODE_ENV === "production";

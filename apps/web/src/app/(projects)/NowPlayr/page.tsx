@@ -1,7 +1,7 @@
 import { ArrowDown } from "lucide-react";
 import { Metadata } from "next";
 import Image from "next/image";
-import React, { unstable_ViewTransition as ViewTransition } from "react";
+import React, { unstable_ViewTransition as ReactViewTransition } from "react";
 
 import { NowPlayrIcon } from "@/assets/images/products";
 import {
@@ -34,6 +34,8 @@ export const metadata: Metadata = {
     type: "website",
   },
 };
+
+const ViewTransition = ReactViewTransition ?? React.Fragment;
 
 export default function Component() {
   const downloadURL =

@@ -2,7 +2,9 @@ import { getPosts } from "@cozy/blog";
 import { AnimatedBackground } from "@cozy/ui";
 import { format } from "date-fns";
 import Link from "next/link";
-import { unstable_ViewTransition as ViewTransition } from "react";
+import React, { unstable_ViewTransition as ReactViewTransition } from "react";
+
+const ViewTransition = ReactViewTransition ?? React.Fragment;
 
 const WritingsSection = async () => {
   const allPosts = await getPosts();

@@ -1,5 +1,7 @@
 import Link from "next/link";
-import React, { unstable_ViewTransition as ViewTransition } from "react";
+import React, { unstable_ViewTransition as ReactViewTransition } from "react";
+
+const ViewTransition = ReactViewTransition ?? React.Fragment;
 
 const WorkSection = () => {
   return (

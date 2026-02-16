@@ -5,9 +5,6 @@ const nextConfig = {
   experimental: {
     viewTransition: true,
   },
-  eslint: {
-    ignoreDuringBuilds: true,
-  },
   pageExtensions: ["js", "jsx", "ts", "tsx", "md", "mdx"],
 };
 
