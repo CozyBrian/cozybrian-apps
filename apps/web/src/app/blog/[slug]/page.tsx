@@ -7,7 +7,7 @@ import {
 import { format } from "date-fns";
 import { Metadata } from "next";
 import { notFound } from "next/navigation";
-import React, { unstable_ViewTransition as ReactViewTransition } from "react";
+import React, { ViewTransition } from "react";
 
 type pageProps = {
   params: Promise<{ slug: string }>;
@@ -52,8 +52,6 @@ export async function generateMetadata({
     },
   };
 }
-
-const ViewTransition = ReactViewTransition ?? React.Fragment;
 
 export default async function Page({ params }: pageProps) {
   const { slug } = await params;

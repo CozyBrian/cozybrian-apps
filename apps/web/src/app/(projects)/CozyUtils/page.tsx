@@ -1,5 +1,5 @@
 import { Metadata } from "next";
-import React, { unstable_ViewTransition as ReactViewTransition } from "react";
+import React, { ViewTransition } from "react";
 
 export const metadata: Metadata = {
   title: "CozyUtils",
@@ -23,8 +23,6 @@ export const metadata: Metadata = {
     type: "website",
   },
 };
-
-const ViewTransition = ReactViewTransition ?? React.Fragment;
 
 export default function CozyUtilsPage() {
   return (

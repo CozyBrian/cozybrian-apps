@@ -1,8 +1,6 @@
-import React, { unstable_ViewTransition as ReactViewTransition } from "react";
+import React, { ViewTransition } from "react";
 
 import WritingsSection from "./(components)/writings-section";
-
-const ViewTransition = ReactViewTransition ?? React.Fragment;
 
 export default function Home() {
   return (
