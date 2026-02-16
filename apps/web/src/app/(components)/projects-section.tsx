@@ -11,6 +11,13 @@ const placeholderProjects = [
   },
   {
     id: 2,
+    title: "CozyUtils",
+    comingsoon: false,
+    description:
+      "A small, cross-platform CLI for asset automation and Git message workflows.",
+  },
+  {
+    id: 3,
     title: "Netwkr",
     comingsoon: true,
     description:
