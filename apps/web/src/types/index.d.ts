@@ -1,9 +1,3 @@
-declare module "@prisma/nextjs-monorepo-workaround-plugin" {
-  export class PrismaPlugin {
-    constructor();
-  }
-}
-
 // mdx.d.ts
 declare module "*.mdx" {
   import { MDXProps } from "mdx/types";

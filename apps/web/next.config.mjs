@@ -1,9 +1,7 @@
 import createMDX from "@next/mdx";
-import { PrismaPlugin } from "@prisma/nextjs-monorepo-workaround-plugin";
-
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-  transpilePackages: ["@cozy/db", "@cozy/ui", "@cozy/styling"],
+  transpilePackages: ["@cozy/ui", "@cozy/styling"],
   experimental: {
     viewTransition: true,
   },
@@ -11,12 +9,6 @@ const nextConfig = {
     ignoreDuringBuilds: true,
   },
   pageExtensions: ["js", "jsx", "ts", "tsx", "md", "mdx"],
-  webpack: (config, { isServer }) => {
-    if (isServer) {
-      config.plugins = [...config.plugins, new PrismaPlugin()];
-    }
-    return config;
-  },
 };
 
 const withMDX = createMDX({

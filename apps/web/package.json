@@ -28,7 +28,6 @@
   },
   "devDependencies": {
     "@cozy/blog": "workspace:*",
-    "@cozy/db": "workspace:*",
     "@cozy/styling": "workspace:*",
     "@cozy/ui": "workspace:*",
     "@cozy/utils": "workspace:*",
