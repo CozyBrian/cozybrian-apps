@@ -2,9 +2,9 @@ import createMDX from "@next/mdx";
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   transpilePackages: ["@cozy/ui", "@cozy/styling"],
-  experimental: {
-    viewTransition: true,
-  },
+  // experimental: {
+  //   viewTransition: true,
+  // },
   pageExtensions: ["js", "jsx", "ts", "tsx", "md", "mdx"],
 };
 
