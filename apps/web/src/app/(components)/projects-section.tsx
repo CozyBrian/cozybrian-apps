@@ -18,6 +18,13 @@ const placeholderProjects = [
   },
   {
     id: 3,
+    title: "CozyCode",
+    comingsoon: false,
+    description:
+      "A desktop-first, provider-agnostic coding agent with a shared TypeScript core and terminal UI.",
+  },
+  {
+    id: 4,
     title: "Netwkr",
     comingsoon: true,
     description:
