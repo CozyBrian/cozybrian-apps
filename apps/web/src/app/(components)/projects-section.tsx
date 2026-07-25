@@ -1,34 +1,34 @@
 import Link from "next/link";
 import React from "react";
 
-const placeholderProjects = [
+const projects = [
   {
     id: 1,
     title: "NowPlayr",
-    comingsoon: false,
+    href: "/NowPlayr",
     description:
       "The beautiful, sleek, open-source music preview for macOS. Your music, at a glance.",
   },
   {
     id: 2,
     title: "CozyUtils",
-    comingsoon: false,
+    href: "/CozyUtils",
     description:
       "A small, cross-platform CLI for asset automation and Git message workflows.",
   },
   {
     id: 3,
     title: "CozyCode",
-    comingsoon: false,
+    href: "/CozyCode",
     description:
       "A desktop-first, provider-agnostic coding agent with a shared TypeScript core and terminal UI.",
   },
   {
     id: 4,
-    title: "Netwkr",
-    comingsoon: true,
+    title: "Cozyplay",
+    href: "/Cozyplay",
     description:
-      "A tool for keeping track of your network data usage, with a focus on simplicity and ease of use.",
+      "Turn Macs on the same local network into one synchronized speaker system.",
   },
 ];
 
@@ -39,24 +39,16 @@ const ProjectsSection = () => {
         Side Projects
       </h2>
       <div className="grid grid-cols-1 md:grid-cols-2 gap-2.5">
-        {placeholderProjects.map((project) => {
-          const El = project.comingsoon ? "div" : Link;
-          return (
-            <El
-              href={`/${project.title}`}
-              key={project.id}
-              className="relative flex-1 flex flex-col group gap-1 p-2.5 text-sm border border-cozy-950 hover:bg-cozy-950 transition-colors duration-300"
-            >
-              {project.comingsoon && (
-                <span className="absolute top-2 right-2 text-xs text-cozy-50/60 group-hover:text-cozy-50 hover:animate-pulse duration-300">
-                  Coming Soon
-                </span>
-              )}
-              <h3 className="font-medium text-cozy-100">{project.title}</h3>
-              <p className="text-xs text-cozy-400">{project.description}</p>
-            </El>
-          );
-        })}
+        {projects.map((project) => (
+          <Link
+            href={project.href}
+            key={project.id}
+            className="relative flex-1 flex flex-col group gap-1 p-2.5 text-sm border border-cozy-950 hover:bg-cozy-950 transition-colors duration-300"
+          >
+            <h3 className="font-medium text-cozy-100">{project.title}</h3>
+            <p className="text-xs text-cozy-400">{project.description}</p>
+          </Link>
+        ))}
       </div>
     </section>
   );

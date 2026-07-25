@@ -35,12 +35,11 @@ export const metadata: Metadata = {
     locale: "en_US",
     type: "website",
   },
+  alternates: {
+    canonical: "/",
+  },
   icons: {
     icon: "/favicon.ico",
-    other: {
-      rel: "canonical",
-      url: "https://www.cozybrian.dev",
-    },
   },
 };
 
@@ -55,7 +54,6 @@ export default function RootLayout({
       className={`dark scroll-smooth text-cozy-50 ${FONTS.variable}`}
     >
       <head>
-        <link rel="canonical" href="https://www.cozybrian.dev" />
         <script
           defer
           src="https://cloud.umami.is/script.js"
