@@ -25,7 +25,7 @@ const projects = [
   },
   {
     id: 4,
-    title: "Cozyplay",
+    title: "CozyPlay",
     href: "/Cozyplay",
     description:
       "Turn Macs on the same local network into one synchronized speaker system.",

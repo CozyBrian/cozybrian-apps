@@ -1,20 +1,20 @@
 import Image from "next/image";
 import { ViewTransition } from "react";
 
-import { CozyplayIcon } from "@/assets/images/products";
+import { CozyPlayIcon } from "@/assets/images/products";
 
 import type { Metadata } from "next";
 
 const description =
-  "Turn Macs on the same local network into one synchronized speaker system with Cozyplay.";
+  "Turn Macs on the same local network into one synchronized speaker system with CozyPlay.";
 
 export const metadata: Metadata = {
-  title: "Cozyplay",
+  title: "CozyPlay",
   description,
   keywords: [
     "Brian Newton",
     "CozyBrian",
-    "Cozyplay",
+    "CozyPlay",
     "macOS",
     "multi-room audio",
     "synchronized audio",
@@ -25,7 +25,7 @@ export const metadata: Metadata = {
     canonical: "/Cozyplay",
   },
   openGraph: {
-    title: "Cozyplay | Brian Newton",
+    title: "CozyPlay | Brian Newton",
     description,
     url: "https://www.cozybrian.dev/Cozyplay",
     siteName: "Brian Newton",
@@ -34,7 +34,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Cozyplay | Brian Newton",
+    title: "CozyPlay | Brian Newton",
     description,
   },
 };
@@ -58,11 +58,11 @@ const features = [
   {
     title: "Native and local",
     description:
-      "Cozyplay is built in SwiftUI with Apple frameworks and has no cloud backend, helper drivers, or third-party runtime dependencies.",
+      "CozyPlay is built in SwiftUI with Apple frameworks and has no cloud backend, helper drivers, or third-party runtime dependencies.",
   },
 ];
 
-export default function CozyplayPage() {
+export default function CozyPlayPage() {
   return (
     <ViewTransition>
       <main className="flex w-full lg:w-[880px] text-cozy-100 px-4 lg:px-0 min-h-screen flex-col gap-14 mx-auto mt-[60px] md:mt-[120px] pb-16">
@@ -83,11 +83,11 @@ export default function CozyplayPage() {
                   Native synchronized audio for macOS
                 </p>
                 <h1 className="text-4xl font-bold tracking-tight text-cozy-50 md:text-5xl">
-                  Cozyplay
+                  CozyPlay
                 </h1>
                 <p className="max-w-[580px] text-base leading-7 text-cozy-300 md:text-lg">
                   Turn the Macs around you into one speaker system. One Mac
-                  hosts whatever it is playing, nearby Macs join, and Cozyplay
+                  hosts whatever it is playing, nearby Macs join, and CozyPlay
                   keeps every output on the same timeline.
                 </p>
               </div>
@@ -117,8 +117,8 @@ export default function CozyplayPage() {
 
             <div className="relative mx-auto flex h-52 w-52 items-center justify-center md:h-60 md:w-60">
               <Image
-                src={CozyplayIcon}
-                alt="Cozyplay app icon"
+                src={CozyPlayIcon}
+                alt="CozyPlay app icon"
                 priority
                 className="relative h-full w-full object-contain"
               />
@@ -207,7 +207,7 @@ export default function CozyplayPage() {
               Your audio stays in the room
             </h2>
             <p className="text-sm leading-6 text-cozy-400">
-              Cozyplay communicates directly with Macs that join the advertised
+              CozyPlay communicates directly with Macs that join the advertised
               local party. It has no analytics, advertising, user accounts, or
               remote API, and it does not write captured audio to disk.
             </p>
@@ -238,7 +238,7 @@ export default function CozyplayPage() {
                 Build from source
               </p>
               <h2 className="text-2xl font-semibold text-cozy-50">
-                Try Cozyplay before the public release
+                Try CozyPlay before the public release
               </h2>
               <p className="text-sm leading-6 text-cozy-400">
                 You will need an Apple silicon Mac, macOS 14.4 or later, Xcode
