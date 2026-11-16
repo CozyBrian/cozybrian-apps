@@ -1,8 +1,8 @@
-import { getMDXData } from ".";
+import { getMDXData } from "@cozy/blog";
 import { ImageResponse } from "next/og";
 
 export async function generateOgImage(slug: string, request: Request) {
- // Fetch post metadata
+  // Fetch post metadata
   const post = await getMDXData(slug);
   if (!post?.metadata) {
     return new Response("Not found", { status: 404 });
@@ -55,4 +55,4 @@ export async function generateOgImage(slug: string, request: Request) {
       height: 630,
     },
   );
-} 
+}

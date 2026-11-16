@@ -39,7 +39,12 @@ const Header = () => {
     >
       <div className="w-full px-4 lg:px-0 lg:w-[880px] h-full flex flex-row items-center justify-between z-50">
         <Link href="/" className="w-fit h-11">
-          <Image src={CozyMinecraft} className="h-full w-[72px]" alt="Logo" />
+          <Image
+            src={CozyMinecraft}
+            className="h-full w-[72px]"
+            alt="Logo"
+            unoptimized
+          />
         </Link>
         <div className="flex flex-row items-center gap-5">
           <Link

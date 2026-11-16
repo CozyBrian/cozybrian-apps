@@ -8,7 +8,9 @@ import remarkFrontmatter from "remark-frontmatter";
 import remarkGfm from "remark-gfm";
 import remarkMdxFrontmatter from "remark-mdx-frontmatter";
 
-import type { MDXFile, MDXFileMeta, MDXHeader } from "./types";
+import { getHeadings } from "./headings";
+
+import type { MDXFile, MDXFileMeta } from "./types";
 
 const __DEV__ = process.env.NODE_ENV === "development";
 
@@ -108,34 +110,9 @@ export function evalMdx(code: string): Promise<MDXFile> {
   return fn(runtime);
 }
 
-export const getHeadings = (content: string): MDXHeader[] => {
-  const headings = content.match(/^#+\s.+/gm);
-
-  if (!headings) return [];
-
-  const toc = headings.map((h) => {
-    const match = h.match(/^#+/);
-    const level = match ? match[0].length : 0;
-    const title = h.replace(/^#+\s/, "");
-    const id = headingToRoute(title);
-    return { level, title, id };
-  });
-
-  return toc;
-};
-
-export function headingToRoute(header: string): string {
-  return header
-    .replace(/^#+\s*/, "")
-    .trim()
-    .toLowerCase()
-    .replace(/[^\w\s-]/g, "")
-    .replace(/\s+/g, "-")
-    .replace(/-+/g, "-")
-    .replace(/^-|-$/g, "");
-}
+export { getHeadings, headingToRoute } from "./headings";
 
 export * from "./types";
-export * from "./components"
-export * from "./mdx-components"
+export * from "./components";
+export * from "./mdx-components";
 export * from "./og-image";

@@ -6,7 +6,7 @@ and shared packages. Use the notes below when running tasks or making changes.
 ## Quick Facts
 
 - Package manager: Bun (see `package.json#packageManager`)
-- Node version: >=18
+- Node version: >=22.12 (Vite 8 / Cloudflare tooling)
 - Workspaces: `apps/*`, `packages/*`
 - Task runner: Turborepo (`turbo.json`)
 - Linting: ESLint (flat config, shared rules in `packages/eslint-config`)
@@ -77,9 +77,19 @@ Run these from the repo root with `turbo` or from the package folder with `bun`.
 
 ## Running a Single Test
 
-There is no test runner configured in this repo and no `*.test.*` files were
-found. If you add a test framework (Vitest/Jest/Playwright), update this file
-with the exact single-test commands.
+Bun's built-in test runner covers shared blog heading helpers:
+
+- Single test file: `bun test packages/blog/src/headings.test.ts`
+- Single named test: `bun test packages/blog/src/headings.test.ts -t "handles empty content"`
+
+## Cloudflare Hosting
+
+- Build web: `bun run build-web:cloudflare`
+- Build blog: `bun run build-blog:cloudflare`
+- Deploy web: `bun run deploy-web:cloudflare`
+- Deploy blog: `bun run deploy-blog:cloudflare`
+- See `CLOUDFLARE.md` for secrets, migration caveats, and domain cutover.
+- Original Next.js commands remain available; Cloudflare uses vinext/Vite.
 
 ## Environment Variables
 

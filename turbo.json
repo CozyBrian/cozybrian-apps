@@ -7,15 +7,27 @@
       "inputs": ["$TURBO_DEFAULT$", ".env*"],
       "outputs": [".next/**", "!.next/cache/**", "dist/**"],
       "env": [
-        "DATABASE_URL", 
-        "DIRECT_URL", 
-        "RESEND_API_KEY", 
-        "BETTER_AUTH_SECRET", 
-        "BETTER_AUTH_URL", 
+        "DATABASE_URL",
+        "DIRECT_URL",
+        "RESEND_API_KEY",
+        "BETTER_AUTH_SECRET",
+        "BETTER_AUTH_URL",
         "VITE_BETTER_AUTH_URL",
         "NEXT_PUBLIC_BLOG_URL",
         "NEXT_PUBLIC_HOME_URL",
         "NODE_ENV"
+      ]
+    },
+    "build:vinext": {
+      "dependsOn": ["^build"],
+      "inputs": ["$TURBO_DEFAULT$", ".env*"],
+      "outputs": [".cloudflare/output/**", ".cloudflare/types/**", "dist/**"],
+      "env": ["NEXT_PUBLIC_BLOG_URL", "NEXT_PUBLIC_HOME_URL", "NODE_ENV"],
+      "passThroughEnv": [
+        "RESEND_API_KEY",
+        "BETTER_AUTH_SECRET",
+        "BETTER_AUTH_URL",
+        "CLOUDFLARE_ACCOUNT_ID"
       ]
     },
     "lint": {

@@ -11,6 +11,7 @@
     }
   },
   "include": [
+    ".cloudflare/types",
     "**/*.ts",
     "**/*.tsx",
     "next-env.d.ts",
@@ -18,7 +19,5 @@
     ".next/types/**/*.ts",
     "mdx-components.jsx"
   ],
-  "exclude": [
-    "node_modules"
-  ]
+  "exclude": ["node_modules"]
 }

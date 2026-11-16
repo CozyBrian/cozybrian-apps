@@ -9,7 +9,11 @@
     "start": "next start",
     "lint": "eslint --max-warnings 0 .",
     "lint:fix": "eslint --cache --fix --ext .js,.jsx,.ts,.tsx src",
-    "check-types": "tsc --noEmit"
+    "check-types": "next typegen && tsc --noEmit",
+    "dev:vinext": "vite dev --port 3000",
+    "build:vinext": "vite build",
+    "start:vinext": "vite preview",
+    "deploy:vinext": "vinext-cloudflare deploy"
   },
   "dependencies": {
     "@mdx-js/loader": "^3.1.0",
@@ -17,16 +21,20 @@
     "@next/mdx": "^16.1.6",
     "@types/mdx": "^2.0.13",
     "@vercel/analytics": "^1.5.0",
+    "@vinext/cloudflare": "^1.4.0",
     "motion": "^12.18.1",
     "next": "16.1.6",
     "postcss": "^8.5.4",
-    "react": "19.2.0",
-    "react-dom": "19.2.0",
+    "react": "19.3.1",
+    "react-dom": "19.3.1",
+    "react-server-dom-webpack": "19.3.1",
     "resend": "^4.6.0",
     "tailwindcss": "^4.1.8",
-    "usehooks-ts": "^3.1.1"
+    "usehooks-ts": "^3.1.1",
+    "vinext": "^1.4.6"
   },
   "devDependencies": {
+    "@cloudflare/vite-plugin": "^2.0.0-beta.v.17",
     "@cozy/blog": "workspace:*",
     "@cozy/styling": "workspace:*",
     "@cozy/ui": "workspace:*",
@@ -36,10 +44,14 @@
     "@types/node": "^22.15.3",
     "@types/react": "19.2.0",
     "@types/react-dom": "19.2.0",
+    "@vitejs/plugin-react": "^6.3.0",
+    "@vitejs/plugin-rsc": "^0.5.39",
+    "cf": "^1.0.0-beta.32",
     "eslint": "^9.28.0",
     "remark-frontmatter": "^5.0.0",
     "remark-mdx-frontmatter": "^5.2.0",
-    "typescript": "~5.8.3"
+    "typescript": "~5.8.3",
+    "vite": "8.3.0"
   },
   "overrides": {
     "@types/react": "19.2.0",

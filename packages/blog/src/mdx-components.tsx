@@ -1,4 +1,4 @@
-import { headingToRoute } from ".";
+import { headingToRoute } from "./headings";
 import type { MDXComponents } from "mdx/types";
 
 // Allows customizing built-in components, e.g. to add styling.

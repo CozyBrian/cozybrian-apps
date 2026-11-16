@@ -40,8 +40,8 @@ export async function generateMetadata({
       title: String(metadata?.title ?? slug),
       description: String(metadata?.summary ?? ""),
       type: "article",
-      url: `https://www.cozybrian.com/blog/${slug}`,
-      authors: ["Brian Newton <https://www.cozybrian.com>"],
+      url: `https://www.cozybrian.dev/blog/${slug}`,
+      authors: ["Brian Newton <https://www.cozybrian.dev>"],
       images: [
         {
           url: `/api/og/${slug}`,

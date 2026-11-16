@@ -12,6 +12,10 @@
     "start-blog": "turbo run blog#start @cozy/ui#dev @cozy/styling#dev",
     "dev-blog": "turbo run blog#dev @cozy/ui#dev @cozy/styling#dev",
     "build-blog": "turbo run blog#build",
+    "build-web:cloudflare": "turbo run build:vinext --filter=web",
+    "build-blog:cloudflare": "turbo run build:vinext --filter=blog",
+    "deploy-web:cloudflare": "bun run build-web:cloudflare && bun run --cwd apps/web deploy:vinext --skip-build",
+    "deploy-blog:cloudflare": "bun run build-blog:cloudflare && bun run --cwd apps/blog deploy:vinext --skip-build",
     "start-admin": "turbo run admin#start @cozy/ui#dev @cozy/styling#dev",
     "dev-admin": "turbo run admin#dev @cozy/ui#dev @cozy/styling#dev",
     "build-admin": "turbo run admin#build",
@@ -20,6 +24,7 @@
     "check-types": "turbo run check-types"
   },
   "devDependencies": {
+    "@mdx-js/rollup": "^3.1.0",
     "@typescript-eslint/eslint-plugin": "^8.34.1",
     "@typescript-eslint/parser": "^8.34.1",
     "eslint-import-resolver-typescript": "^4.4.3",
@@ -31,10 +36,11 @@
     "prettier": "^3.5.3",
     "syncpack": "^14.0.0-alpha.13",
     "turbo": "^2.5.4",
-    "typescript": "~5.8.3"
+    "typescript": "~5.8.3",
+    "vite": "8.3.0"
   },
   "engines": {
-    "node": ">=20.9.0"
+    "node": ">=22.12.0"
   },
   "packageManager": "bun@1.2.10",
   "workspaces": [
@@ -62,8 +68,8 @@
     "yup": "^1.6.1"
   },
   "overrides": {
-    "react": "19.2.0",
-    "react-dom": "19.2.0",
+    "react": "19.3.1",
+    "react-dom": "19.3.1",
     "@types/react": "19.2.0",
     "@types/react-dom": "19.2.0"
   }
