@@ -8,7 +8,10 @@ import { useViewer, viewer } from "./viewer-store";
 
 export type ViewerImage = {
   id: string;
+  /** The full-size image, loaded only once the viewer shows it. */
   src: StaticImageData;
+  /** A small version for the filmstrip; pass the one the page already shows so it is not fetched twice. */
+  thumb?: StaticImageData;
   alt: string;
   title: string;
   caption?: string;
@@ -27,7 +30,6 @@ const SWIPE_TO_CLOSE = 110;
 const FLICK_SPEED = 0.11;
 const FLICK_MIN = 40;
 
-const FIT_SIZES = "(min-width: 1024px) 80vw, 100vw";
 const FOCUSABLE = "button, a[href], [tabindex]:not([tabindex='-1'])";
 
 const pad = (value: number) => String(value).padStart(2, "0");
@@ -83,7 +85,7 @@ function Slide({ item, active, onZoom, className }: SlideProps) {
         src={item.src}
         alt={item.alt}
         fill
-        sizes={FIT_SIZES}
+        unoptimized
         loading={active ? "eager" : "lazy"}
         className="object-contain"
       />
@@ -112,10 +114,10 @@ function Filmstrip({ items, index }: { items: ViewerImage[]; index: number }) {
             )}
           >
             <Image
-              src={item.src}
+              src={item.thumb ?? item.src}
               alt=""
               fill
-              sizes="72px"
+              unoptimized
               className="object-cover"
             />
           </button>
@@ -129,6 +131,9 @@ function Filmstrip({ items, index }: { items: ViewerImage[]; index: number }) {
  * Full-screen image viewer, adapted from the saunagh-web media viewer. Desktop pages with arrows, keys and a
  * filmstrip; touch screens swipe through a snapping row and swipe down to close. Clicking an image zooms it into a
  * pane that scrolls both ways. Opened by ViewerTrigger via viewer-store; render it once on a page that has triggers.
+ *
+ * Images are `unoptimized` on purpose: the site's host serves files as they are, so every `/_next/image` width is a
+ * separate download of the same bytes. One plain URL per file lets fit, zoom and the filmstrip share a single fetch.
  */
 export default function ImageViewer({ items, context }: ImageViewerProps) {
   const state = useViewer();
@@ -424,7 +429,7 @@ export default function ImageViewer({ items, context }: ImageViewerProps) {
                 <Image
                   src={item.src}
                   alt={item.alt}
-                  sizes={`min(${Math.round(item.src.width / 2)}px, 240vw)`}
+                  unoptimized
                   className="h-auto w-full"
                 />
               </button>

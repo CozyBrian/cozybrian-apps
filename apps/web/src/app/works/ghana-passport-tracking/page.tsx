@@ -4,7 +4,9 @@ import React, { ViewTransition } from "react";
 import {
   GhanaCoatOfArms,
   PassportCourierPickup,
+  PassportCourierPickupThumb,
   PassportDashboardOverview,
+  PassportDashboardOverviewThumb,
 } from "@/assets/images/works/ghana-passport";
 import ImageViewer, {
   type ViewerImage,
@@ -52,6 +54,7 @@ const screenshots: ViewerImage[] = [
   {
     id: "dashboard-overview",
     src: PassportDashboardOverview,
+    thumb: PassportDashboardOverviewThumb,
     alt: "Overview dashboard showing pickup, delivery and SLA metrics",
     title: "Overview dashboard",
     caption: "Pickup, delivery and SLA metrics across couriers and regions.",
@@ -59,14 +62,13 @@ const screenshots: ViewerImage[] = [
   {
     id: "courier-pickup",
     src: PassportCourierPickup,
+    thumb: PassportCourierPickupThumb,
     alt: "Web portal sign-in screen beside the pending courier pickup view",
     title: "Sign-in and pending courier pickup",
     caption:
       "The web portal's sign-in screen beside the pending courier pickup view.",
   },
 ];
-
-const panelSizes = "(min-width: 1024px) 430px, (min-width: 768px) 50vw, 100vw";
 
 const Page = () => {
   return (
@@ -133,9 +135,9 @@ const Page = () => {
               className="flex w-full h-full min-h-[150px] items-center justify-center bg-cozy-950"
             >
               <Image
-                src={PassportDashboardOverview}
+                src={PassportDashboardOverviewThumb}
                 alt="Overview dashboard showing pickup, delivery and SLA metrics"
-                sizes={panelSizes}
+                unoptimized
                 className="w-full h-auto"
               />
             </ViewerTrigger>
@@ -191,9 +193,9 @@ const Page = () => {
               className="flex w-full h-full min-h-[150px] items-center justify-center bg-cozy-950"
             >
               <Image
-                src={PassportCourierPickup}
+                src={PassportCourierPickupThumb}
                 alt="Web portal sign-in screen beside the pending courier pickup view"
-                sizes={panelSizes}
+                unoptimized
                 className="w-full h-auto"
               />
             </ViewerTrigger>
